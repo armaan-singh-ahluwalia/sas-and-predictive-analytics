@@ -19,16 +19,16 @@ MBA Graduate in Business Analytics with hands-on experience applying predictive 
 
 # Projects
 
-# Customer Loan Acceptance Prediction
+# Customer Loan Acceptance Prediction (R)
 Binary classification models to support credit decision-making, balancing predictive accuracy and interpretability.
 
-# Airline Customer Segmentation
+# Airline Customer Segmentation (R)
 Unsupervised clustering to identify distinct customer segments and derive actionable marketing strategies.
 
-# Aggregate Demand Analysis and Price Elasticity Modeling for Vodka Sales (Consumer Goods)
+# Aggregate Demand Analysis and Price Elasticity Modeling for Vodka Sales using SAS (Consumer Goods)
 Regression-based demand modeling to estimate price sensitivity and inform pricing strategy.
 
-# Discrete Choice Modeling Using Mixed Logit (SAS) on Yoghurt sales
+# Discrete Choice Modeling Using Mixed and Conditional Logits (SAS) on Yoghurt sales
 Econometric analysis of consumer choice behavior using conditional and mixed logit models.
 
 # Text Analytics and Classification (R)
