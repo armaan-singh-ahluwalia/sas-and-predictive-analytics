@@ -14,7 +14,7 @@
 * 1. Data Import and Exploration
 *******************************************************/
 
-libname ass1 ".";
+libname ass1 "C:\Users\PhotonUser\Downloads";
 
 /* Import CSV file */
 proc import out = ass1.svedka
