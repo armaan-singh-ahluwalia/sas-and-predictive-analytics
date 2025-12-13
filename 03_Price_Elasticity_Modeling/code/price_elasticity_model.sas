@@ -1,49 +1,111 @@
-# Price Elasticity Modeling (SVEDKA Vodka)
+/*******************************************************
+* Price Elasticity Modeling – SVEDKA Vodka
+*
+* Description:
+* This program estimates demand models for SVEDKA vodka
+* using linear regression and computes price elasticity
+* of demand based on regression estimates.
+*
+* Author: Armaan Singh Ahluwalia
+*******************************************************/
 
-## Business Problem
-The objective of this project was to estimate the price elasticity of demand for SVEDKA vodka using aggregate sales data. The analysis was designed to quantify consumer price sensitivity and assess the role of advertising expenditures in driving sales, thereby supporting pricing and promotional strategy decisions.
 
-## Data Overview
-- Dataset: SVEDKA vodka sales and marketing data
-- Observations: Aggregate market-level records
-- Key Variables:
-  - Demand: TotalSales
-  - Price: PricePerUnit
-  - Advertising: Magazine, Newspaper, Outdoor, Broadcast, Print
-  - Market attributes: Market share, brand characteristics, time indicators
-- Data Preparation:
-  - Data imported into SAS and reviewed using summary statistics and frequency tables
-  - Mean values computed to support elasticity calculation
+/*******************************************************
+* 1. Data Import and Exploration
+*******************************************************/
 
-## Methodology
-A sequence of linear regression models was estimated to evaluate the relationship between sales, price, and advertising.
+libname ass1 ".";
 
-### Model Specification Strategy
-- Baseline model: Sales regressed on price only
-- Extended models: Sales regressed on price and alternative advertising variables
-- Multiple advertising specifications were tested to assess robustness and avoid overfitting
-- Final elasticity calculation was based on the price-only model for interpretability
+/* Import CSV file */
+proc import out = ass1.svedka
+    datafile = "svedka.csv"
+    dbms = csv
+    replace;
+    getnames = yes;
+    datarow = 2;
+run;
 
-### Elasticity Computation
-Price elasticity of demand was computed using the standard point elasticity formula:
+/* Dataset structure */
+proc contents data = ass1.svedka;
+run;
 
-Elasticity = β_price × (Average Price / Average Sales)
+/* Preview observations */
+proc print data = ass1.svedka (obs = 10);
+run;
 
-where β_price is the estimated price coefficient from the regression model.
 
-## Key Insights
-- The estimated price coefficient was negative, indicating an inverse relationship between price and sales
-- Advertising variables showed mixed effects across specifications
-- Price elasticity magnitude suggested that demand for vodka is price-sensitive
-- The results imply that pricing decisions have a material impact on total sales volume
+/*******************************************************
+* 2. Descriptive Statistics
+*******************************************************/
 
-## Business Recommendations
-- Avoid aggressive price increases, as demand is responsive to price changes
-- Use advertising strategically to complement pricing actions rather than substitute for them
-- Focus promotional spend on channels that demonstrate consistent incremental impact
-- Periodically re-estimate elasticity as market conditions and competitive dynamics evolve
+/* Summary statistics */
+proc means data = ass1.svedka maxdec = 2;
+    var TotalSales PricePerUnit
+        Mag News Outdoor Broad Print
+        TotalMinusSales Marketshare;
+run;
 
-## Tools Used
-- SAS
-- Procedures: DATA step, PROC MEANS, PROC FREQ, PROC REG
+/* Frequency distributions */
+proc freq data = ass1.svedka;
+    tables BrandName Brand_ID Year Domestic Tier FirstIntro;
+run;
+
+
+/*******************************************************
+* 3. Mean Values for Elasticity Calculation
+*******************************************************/
+
+proc means data = ass1.svedka mean;
+    var TotalSales PricePerUnit;
+    output out = means_all mean = / autoname;
+run;
+
+
+/*******************************************************
+* 4. Regression Analysis
+*******************************************************/
+
+/* Baseline: Sales on Price */
+proc reg data = ass1.svedka plots = none outest = linreg_final;
+    model TotalSales = PricePerUnit;
+run; quit;
+
+/* Price + Advertising Specifications */
+proc reg data = ass1.svedka plots = none;
+    model TotalSales = PricePerUnit Mag;
+run; quit;
+
+proc reg data = ass1.svedka plots = none;
+    model TotalSales = PricePerUnit Print;
+run; quit;
+
+proc reg data = ass1.svedka plots = none;
+    model TotalSales = PricePerUnit News;
+run; quit;
+
+proc reg data = ass1.svedka plots = none;
+    model TotalSales = PricePerUnit Outdoor Broad;
+run; quit;
+
+proc reg data = ass1.svedka plots = none;
+    model TotalSales = PricePerUnit Print Outdoor Broad;
+run; quit;
+
+
+/*******************************************************
+* 5. Price Elasticity Calculation
+*******************************************************/
+
+data elasticity;
+    merge linreg_final (drop = _TYPE_)
+          means_all (drop = _TYPE_);
+
+    /* Price elasticity of demand */
+    Elasticity_Price =
+        PricePerUnit * (PricePerUnit_mean / TotalSales_mean);
+run;
+
+proc print data = elasticity;
+run;
+
 
