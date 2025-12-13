@@ -32,15 +32,14 @@ Elasticity = β_price × (Average Price / Average Sales)
 where β_price is the estimated price coefficient from the regression model.
 
 ## Key Insights
-- The estimated price coefficient was negative, indicating an inverse relationship between price and sales
-- Advertising variables showed mixed effects across specifications
-- Price elasticity magnitude suggested that demand for vodka is price-sensitive
-- The results imply that pricing decisions have a material impact on total sales volume
+- The estimated price coefficient was negative but of a very low magnitude close to 0, indicating a relatively inelastic relationship between price and sales
+- Advertising variables showed mixed effects across specifications, with some such as Radio and TV showing matrial effects on increasing sales, whereas others such as Print and News not being as significant
+- Price elasticity magnitude suggested that demand for vodka is not price-sensitive
+- The results imply that advertising decisions have a material impact on total sales volume
 
 ## Business Recommendations
-- Avoid aggressive price increases, as demand is responsive to price changes
-- Use advertising strategically to complement pricing actions rather than substitute for them
-- Focus promotional spend on channels that demonstrate consistent incremental impact
+- Exploit the relatively inelastic demand and raise prices to boost margins, as demand is relatively unresponsive to price changes.
+- Invest heavily in TV and Radio advertising and use it strategically to complement pricing increases
 - Periodically re-estimate elasticity as market conditions and competitive dynamics evolve
 
 ## Tools Used
