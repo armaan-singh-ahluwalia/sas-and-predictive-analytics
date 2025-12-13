@@ -20,7 +20,7 @@ MBA Graduate in Business Analytics with hands-on experience applying predictive 
 # Projects
 
 # Customer Loan Acceptance Prediction (R)
-Binary classification models to support credit decision-making, balancing predictive accuracy and interpretability.
+Binary classification models to support credit decision-making using ANNs, SVMs, Naive Bayes, kNN, and Decision Tree models, balancing predictive accuracy and interpretability.
 
 # Airline Customer Segmentation (R)
 Unsupervised clustering to identify distinct customer segments and derive actionable marketing strategies.
