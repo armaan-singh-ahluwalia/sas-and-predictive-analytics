@@ -38,7 +38,7 @@ where β_price is the estimated price coefficient from the regression model.
 - The results imply that advertising decisions have a material impact on total sales volume
 
 ## Business Recommendations
-- Exploit the relatively inelastic demand and raise prices to boost margins, as demand is relatively unresponsive to price changes.
+- Exploit the relatively inelastic demand and raise prices to boost margins, as demand is relatively unresponsive to price changes
 - Invest heavily in TV and Radio advertising and use it strategically to complement pricing increases
 - Periodically re-estimate elasticity as market conditions and competitive dynamics evolve
 
