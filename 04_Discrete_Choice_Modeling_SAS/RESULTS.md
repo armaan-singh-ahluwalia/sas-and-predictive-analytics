@@ -8,7 +8,7 @@ Key findings:
 - Mixed Logit models captured meaningful heterogeneity in consumer preferences.
 
 ## Elasticity Analysis
-Own- and cross-price elasticity estimates revealed substitution patterns among products, indicating competitive interactions within the category.
+Own- and cross-price elasticity estimates revealed substitution patterns among products, with demand being highly elastic and indicating competitive interactions within the category. Price remains a key determinant behind purchase decisions.
 
 ## Business Implication
 Pricing and promotion strategies should account for consumer heterogeneity and substitution effects rather than applying uniform actions across products.
