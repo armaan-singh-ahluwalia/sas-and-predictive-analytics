@@ -1,7 +1,7 @@
 # Mixed and Conditional Logit Models in SAS for Yogurt Marketing Strategy Development
 
 ## Business Problem
-The objective of this project was to model consumer product choice behavior in the yogurt category using panel data and discrete choice models. The analysis focuses on understanding how product attributes—particularly price and in-store promotions—influence brand selection, and how consumer preferences vary across individuals.
+The objective of this project was to model consumer product choice behavior in the yogurt category using panel data and discrete choice models. The analysis focuses on understanding how product attributes, particularly price and in-store promotions, influence brand selection, and how consumer preferences vary across individuals.
 
 This type of modeling supports pricing strategy, promotion planning, and competitive positioning decisions in categories characterized by frequent purchase and close substitutes.
 
