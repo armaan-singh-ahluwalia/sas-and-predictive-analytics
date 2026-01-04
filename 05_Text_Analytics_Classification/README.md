@@ -1,4 +1,4 @@
-# Text Analytics with Naive Bayes and SVM for advertisement classfification
+# Text Analytics with Naive Bayes and SVM for advertisement classification
 
 ## Business Problem
 The objective of this project was to classify text-based advertisements into predefined categories using supervised learning models. The analysis demonstrates how unstructured textual data can be transformed into quantitative features and used to support automated classification tasks such as ad screening, content filtering, or marketing response prediction.
@@ -9,7 +9,7 @@ The objective of this project was to classify text-based advertisements into pre
 - Target Variable: `label`
 - Characteristics:
   - High-dimensional and sparse text features
-  - Vocabulary size substantially larger than the number of observations
+  - Vocabulary size is substantially larger than the number of observations
 - Data Preparation:
   - Text cleaning and normalization
   - Stemming using SnowballC
